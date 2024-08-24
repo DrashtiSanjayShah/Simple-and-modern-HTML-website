@@ -27,6 +27,29 @@ header a h1 {
   font-weight: 200;
 }
 
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger-menu .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.nav-menu {
+  display: flex;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -118,11 +141,13 @@ nav a:hover {
   padding: 10px;
   height: 375px;
   margin-top: 3rem;
+  
 }
 
 .left {
+  margin-top: 7rem;
   width: 60%;
-  margin-left: 4rem;
+  margin-left: 5rem;
 }
 
 .left h3 {
@@ -172,7 +197,7 @@ nav a:hover {
 .aboutus {
   width: 90%;
   margin: 5rem;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .aboutus_box {
@@ -419,4 +444,167 @@ footer {
 
 .subscribe_box_info p {
   font-size: 14px; /* Font size for subscription information */
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    background-color: grey;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 9;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-menu ul {
+    display: block;
+    margin: 0;
+  }
+
+  .nav-menu ul li {
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+
+  .heroSection_box {
+    height: 100vh; /* Full viewport height */
+  }
+
+  .heroSection_box_left, .heroSection_box_right {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    text-align: center; /* Center the text */
+  }
+
+  .heroSection_box_left {
+    z-index: 2; /* Ensure heading is on top */
+    color: black; /* Text color for visibility */
+  }
+
+  .heroSection_box_right {
+    background-image: url("images/hero1.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Background image behind heading */
+  }
+
+  .heroSection_box_left h1 {
+    font-size: 2.5rem; /* Adjust size as needed */
+  }
+
+  .heroSection_box_left p {
+    display: none;
+  }
+
+.left{
+  margin-left: .6rem;
+  margin-top: 0rem;
+}
+
+.right{
+  margin-top: 10rem;
+}
+
+.button-container {
+  margin-top: 45rem; /* Adjusted to fit better in the responsive view */
+}
+
+.aboutus_box_hero {
+  display: flex;
+  flex-direction: column; /* Stack the elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+  height: 100vh; /* Full viewport height */
+  background-image: url("images/hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.aboutus_box_hero_left {
+  z-index: 2; /* Ensure text is on top of the image */
+  color: white; /* Text color for visibility on the background image */
+  padding: 1rem; /* Padding for better spacing */
+  background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better text readability */
+}
+
+.aboutus_box_hero_right {
+  display: none; /* Hide the image section */
+}
+
+.aboutus_box_hero_left h1 {
+  font-size: 2.5rem; /* Adjust size as needed */
+}
+
+.aboutus_box_hero_left p {
+  font-size: 1.2rem; /* Adjust size as needed */
+  line-height: 1.5; /* Adjust line height for readability */
+}
+
+.contactus_box_hero {
+  display: flex;
+  flex-direction: column; /* Stack the elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+  height: 100vh; /* Full viewport height */
+  background-image: url("images/contact.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contactus_box_hero_left {
+  z-index: 2; /* Ensure text is on top of the image */
+  color: white; /* Text color for visibility on the background image */
+  padding: 1rem; /* Padding for better spacing */
+  background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better text readability */
+}
+
+.contactus_box_hero_right {
+  display: none; /* Hide the image section */
+}
+
+.contactus_box_hero_left h1 {
+  font-size: 2.5rem; /* Adjust size as needed */
+}
+
+.contactus_box_hero_left p {
+  font-size: 1.2rem; /* Adjust size as needed */
+  line-height: 1.5; /* Adjust line height for readability */
+}
+
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+.footer-container{
+  margin-left: 0rem;
+}
+
+  .footer-logo h1 {
+    font-size: 2rem;
+  }
 }
